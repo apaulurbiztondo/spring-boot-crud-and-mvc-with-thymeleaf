@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-import static com.springboot.thymeleafdemo.constants.Constants.ADMIN;
-import static com.springboot.thymeleafdemo.constants.Constants.EMPLOYEE;
-import static com.springboot.thymeleafdemo.constants.Constants.MANAGER;
+import static com.springboot.thymeleafdemo.constants.Constants.ADMIN_ROLE;
+import static com.springboot.thymeleafdemo.constants.Constants.EMPLOYEE_ROLE;
+import static com.springboot.thymeleafdemo.constants.Constants.MANAGER_ROLE;
 
 @Configuration
 public class SecurityConfig {
@@ -19,19 +19,19 @@ public class SecurityConfig {
         UserDetails john = User.builder()
                 .username("john")
                 .password("{noop}test123")
-                .roles(EMPLOYEE)
+                .roles(EMPLOYEE_ROLE)
                 .build();
 
         UserDetails mary = User.builder()
                 .username("mary")
                 .password("{noop}test123")
-                .roles(EMPLOYEE, MANAGER)
+                .roles(EMPLOYEE_ROLE, MANAGER_ROLE)
                 .build();
 
         UserDetails susan = User.builder()
                 .username("susan")
                 .password("{noop}test123")
-                .roles(EMPLOYEE, MANAGER, ADMIN)
+                .roles(EMPLOYEE_ROLE, MANAGER_ROLE, ADMIN_ROLE)
                 .build();
 
         return new InMemoryUserDetailsManager(john, mary, susan);
