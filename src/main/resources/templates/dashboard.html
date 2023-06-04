@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dashboard Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+<div class="container mt-5">
+    <p th:text="'Time on the server is: ' + ${theDate}" class="greet"></p>
+    <p><a th:href="@{/employees/list}">Go to Employee's list</a></p>
+</div>
+</body>
+
+</html>

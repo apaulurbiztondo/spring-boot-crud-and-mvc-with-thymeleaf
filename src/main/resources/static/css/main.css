@@ -1,0 +1,13 @@
+.greet {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.logout-button {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    z-index: 9999;
+}

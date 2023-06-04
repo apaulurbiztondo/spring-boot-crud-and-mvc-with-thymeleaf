@@ -15,6 +15,9 @@
                     </div>
                     <div class="card-body">
                         <form id="login-form" action="#" th:action="@{/authenticateTheUser}" method="POST">
+                            <div class="alert alert-success" id="success-message" th:if="${param.logout}">
+                                Logout successful!
+                            </div>
                             <div class="alert alert-danger" id="error-message" th:if="${param.error}">
                                 Invalid username or password.
                             </div>
